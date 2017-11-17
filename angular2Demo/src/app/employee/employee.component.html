@@ -1,7 +1,10 @@
 ﻿<table>
     <thead>
         <tr>
-            <td [attr.colspan]="columnspan">Employee Details</td>
+            <td colspan="2">
+                Employee Details
+                <button (click)="onClick()">{{showDetails?"HideDetails":"showDetails"}}</button>
+            </td>
         </tr>
     </thead>
     <tbody>
@@ -13,13 +16,17 @@
             <td>Last Name</td>
             <td>{{lastName}}</td>
         </tr>
-        <tr>
-            <td>Gender</td>
-            <td>{{gender}}</td>
+        <tr *ngIf="showDetails; then thenBlock else elseBlock">
+                       
         </tr>
-        <tr>
+        <tr *ngIf="showDetails">
             <td>Age</td>
             <td>{{age}}</td>
         </tr>
     </tbody>
 </table>
+<ng-template #elseBlock>You have hided</ng-template>
+<ng-template #thenBlock>
+    <td>Gender</td>
+    <td>{{gender}}</td>
+</ng-template> 
