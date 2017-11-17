@@ -9,16 +9,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EmployeeComponent = /** @class */ (function () {
     function EmployeeComponent() {
-        this.columnspan = 2;
-        this.firstName = "Vishnu";
-        this.lastName = "Mallipudi";
-        this.gender = "Male";
-        this.Age = 20;
+        this.applyBold = true;
+        this.applyItalics = true;
+        this.applyColor = true;
     }
+    EmployeeComponent.prototype.addClasses = function () {
+        var allClasses = {
+            boldClass: this.applyBold,
+            italicClass: this.applyItalics,
+            colorClass: this.applyColor
+        };
+        return allClasses;
+    };
     EmployeeComponent = __decorate([
         core_1.Component({
             selector: 'my-employee',
-            templateUrl: 'app/employee/employee.component.html'
+            template: "\n<button [ngClass]='addClasses()'>Click Here</button>\n<button [class.boldClass]='classvalue'>Click Here</button>"
         })
     ], EmployeeComponent);
     return EmployeeComponent;

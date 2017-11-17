@@ -1,12 +1,20 @@
 ﻿import { Component } from '@angular/core'
 @Component({
     selector: 'my-employee',
-    templateUrl:'app/employee/employee.component.html'
+    template: `
+<button [ngClass]='addClasses()'>Click Here</button>
+<button [class.boldClass]='classvalue'>Click Here</button>`
 })
 export class EmployeeComponent {
-    columnspan: number = 2;
-    firstName: string = "Vishnu";
-    lastName: string = "Mallipudi";
-    gender: string = "Male";
-    Age: number = 20;
+    applyBold: boolean = true;
+    applyItalics: boolean = true;
+    applyColor: boolean = true;
+    addClasses() {
+        let allClasses={
+            boldClass: this.applyBold,
+            italicClass: this.applyItalics,
+            colorClass: this.applyColor
+        };
+        return allClasses;
+    }
 }
