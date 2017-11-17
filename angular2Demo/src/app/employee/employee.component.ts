@@ -4,6 +4,7 @@
     templateUrl:'app/employee/employee.component.html'
 })
 export class EmployeeComponent {
+    columnspan: number = 2;
     firstName: string = "Vishnu";
     lastName: string = "Mallipudi";
     gender: string = "Male";

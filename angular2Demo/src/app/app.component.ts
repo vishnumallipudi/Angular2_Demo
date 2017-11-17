@@ -3,7 +3,6 @@ import { Component } from "@angular/core"
 @Component({
     selector: 'my-app',
     template: `<div>
-                    <h3><input id="mytextbox" type="text" value="Vishnu"/></h3>
                     <my-employee>employee dey=tials omes hreer</my-employee>
                 </div>`
 })

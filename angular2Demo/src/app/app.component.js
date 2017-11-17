@@ -21,7 +21,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<div>\n                    <h3><input id=\"mytextbox\" type=\"text\" value=\"Vishnu\"/></h3>\n                    <my-employee>employee dey=tials omes hreer</my-employee>\n                </div>"
+            template: "<div>\n                    <my-employee>employee dey=tials omes hreer</my-employee>\n                </div>"
         })
     ], AppComponent);
     return AppComponent;
