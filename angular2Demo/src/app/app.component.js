@@ -10,11 +10,18 @@ var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.pageHeader = "Employee details";
+        this.subHeader = null;
+        this.firstName = "Vishnu";
+        this.lastName = "Mallipudi";
+        this.isDisabled = false;
     }
+    AppComponent.prototype.getFullName = function () {
+        return this.firstName + ' ' + this.lastName;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<div>\n                    <h1>{{pageHeader}}</h1>\n                    <my-employee>employee dey=tials omes hreer</my-employee>\n                </div>"
+            template: "<div>\n                    <h3><input id=\"mytextbox\" type=\"text\" value=\"Vishnu\"/></h3>\n                    <my-employee>employee dey=tials omes hreer</my-employee>\n                </div>"
         })
     ], AppComponent);
     return AppComponent;
