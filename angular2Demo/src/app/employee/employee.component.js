@@ -9,15 +9,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EmployeeComponent = /** @class */ (function () {
     function EmployeeComponent() {
+        this.exmodel = "Tom";
         this.firstName = "Vishnu";
         this.lastName = "Mallipudi";
         this.gender = "Male";
         this.age = 24;
         this.showDetails = true;
     }
-    EmployeeComponent.prototype.onClick = function () {
+    EmployeeComponent.prototype.onClick = function (event) {
         this.showDetails = !this.showDetails;
         console.log(this.showDetails);
+        console.log(event.target);
+    };
+    EmployeeComponent.prototype.modelClick = function (e) {
+        this.exmodel = e.target.value;
+        console.log(this.exmodel);
     };
     EmployeeComponent = __decorate([
         core_1.Component({

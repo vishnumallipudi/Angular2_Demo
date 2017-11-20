@@ -1,0 +1,29 @@
+﻿
+<table>
+    <thead>
+        <tr>
+            <td>Emp Id</td>
+            <td>Emp FirstName</td>
+            <td>Emp LastName</td>
+            <td>Emp Dept</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.Id}}</td>
+            <td>{{emp.FirstName}}</td>
+            <td>{{emp.LastName}}</td>
+            <td>{{emp.Dept}}</td>
+        </tr>
+        <tr *ngIf="!employees||employees.length==0">
+            <td colspan="4">No Employees exist!!</td>
+        </tr>
+    </tbody>
+</table>
+<ng-template #elseBlock>You have hided</ng-template>
+<ng-template #thenBlock>
+    <td>Gender</td>
+    <td>{{gender}}</td>
+</ng-template> 
+
+

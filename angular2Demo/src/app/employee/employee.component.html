@@ -1,9 +1,11 @@
-﻿<table>
+﻿Input is : <input type="text" [(ngModel)]='exmodel'/>
+Model is {{exmodel}}
+<table>
     <thead>
         <tr>
             <td colspan="2">
                 Employee Details
-                <button (click)="onClick()">{{showDetails?"HideDetails":"showDetails"}}</button>
+                <button (click)="onClick($event)">{{showDetails?"HideDetails":"showDetails"}}</button>
             </td>
         </tr>
     </thead>
@@ -30,3 +32,5 @@
     <td>Gender</td>
     <td>{{gender}}</td>
 </ng-template> 
+
+

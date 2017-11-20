@@ -72,6 +72,7 @@
     <Content Include="bs-config.json" />
     <Content Include="package.json" />
     <Content Include="src\app\add.component.html" />
+    <Content Include="src\app\employee\employee-list.component.html" />
     <Content Include="src\app\employee\employee.component.html" />
     <Content Include="src\tsconfig.json" />
     <Content Include="tslint.json" />
@@ -98,6 +99,8 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <Content Include="src\app\employee\employee-list.component.css" />
+    <TypeScriptCompile Include="src\app\employee\employee-list.component.ts" />
     <TypeScriptCompile Include="src\app\employee\employee.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
