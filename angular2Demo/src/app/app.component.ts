@@ -3,7 +3,7 @@ import { Component } from "@angular/core"
 @Component({
     selector: 'my-app',
     template: `<div>
-                    <my-employee>ngmodel demo comes here</my-employee>
+                    
                     <list-employee>employee dey=tials omes hreer</list-employee>
                 </div>`
 })

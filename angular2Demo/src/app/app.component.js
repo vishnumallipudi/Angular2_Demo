@@ -21,7 +21,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<div>\n                    <my-employee>ngmodel demo comes here</my-employee>\n                    <list-employee>employee dey=tials omes hreer</list-employee>\n                </div>"
+            template: "<div>\n                    \n                    <list-employee>employee dey=tials omes hreer</list-employee>\n                </div>"
         })
     ], AppComponent);
     return AppComponent;
