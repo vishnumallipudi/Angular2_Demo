@@ -13,19 +13,20 @@ var core_1 = require("@angular/core");
 var EmployeeListComponent = /** @class */ (function () {
     function EmployeeListComponent() {
         this.employees = [
-            { Id: 1, FirstName: 'vishnu', LastName: 'Mallipudi', Dept: 'IT' },
-            { Id: 2, FirstName: 'Venkatesh', LastName: 'Sadineni', Dept: 'IT' },
-            { Id: 3, FirstName: 'Saibaba', LastName: 'Vinnakota', Dept: 'IT' },
-            { Id: 4, FirstName: 'Naveen', LastName: 'Tanakala', Dept: 'IT' },
+            { Id: 1, FirstName: 'vishnu', LastName: 'Mallipudi', Dept: 'IT', Salary: '555.3', Dob: '6/15/1994' },
+            { Id: 2, FirstName: 'Venkatesh', LastName: 'Sadineni', Dept: 'IT', Salary: '555.3', Dob: '6/15/1994' },
+            { Id: 3, FirstName: 'Saibaba', LastName: 'Vinnakota', Dept: 'IT', Salary: '895.3333', Dob: '6/15/1994' },
+            { Id: 4, FirstName: 'Naveen', LastName: 'Tanakala', Dept: 'IT', Salary: '143', Dob: '6/15/1994' },
+            { Id: 5, FirstName: 'Naveen2', LastName: 'Tanakala', Dept: 'IT', Salary: '948.36', Dob: '6/15/1994' },
         ];
     }
     EmployeeListComponent.prototype.getEmployees = function () {
         this.employees = [
-            { Id: 1, FirstName: 'vishnu', LastName: 'Mallipudi', Dept: 'IT' },
-            { Id: 2, FirstName: 'Venkatesh', LastName: 'Sadineni', Dept: 'IT' },
-            { Id: 3, FirstName: 'Saibaba', LastName: 'Vinnakota', Dept: 'IT' },
-            { Id: 4, FirstName: 'Naveen', LastName: 'Tanakala', Dept: 'IT' },
-            { Id: 5, FirstName: 'Naveen2', LastName: 'Tanakala', Dept: 'IT' },
+            { Id: 1, FirstName: 'vishnu', LastName: 'Mallipudi', Dept: 'IT', Salary: '555.3', Dob: '6/15/1994' },
+            { Id: 2, FirstName: 'Venkatesh', LastName: 'Sadineni', Dept: 'IT', Salary: '555.3', Dob: '6/15/1994' },
+            { Id: 3, FirstName: 'Saibaba', LastName: 'Vinnakota', Dept: 'IT', Salary: '895.3333', Dob: '6/15/1994' },
+            { Id: 4, FirstName: 'Naveen', LastName: 'Tanakala', Dept: 'IT', Salary: '143', Dob: '6/15/1994' },
+            { Id: 5, FirstName: 'Naveen2', LastName: 'Tanakala', Dept: 'IT', Salary: '948.363', Dob: '6/15/1994' },
         ];
     };
     EmployeeListComponent.prototype.trackByEmpId = function (index, emp) {

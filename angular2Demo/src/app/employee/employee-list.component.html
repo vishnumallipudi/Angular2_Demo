@@ -6,24 +6,20 @@
             <td>Emp FirstName</td>
             <td>Emp LastName</td>
             <td>Emp Dept</td>
-            <td>Index</td>
-            <td>isFirst</td>
-            <td>isLast</td>
-            <td>isEven</td>
-            <td>isLast</td>
+            <td>Salary</td>
+            <td>Date of Birth</td>
+            
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let emp of employees;trackBy:trackByEmpId;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd">
+        <tr *ngFor="let emp of employees;trackBy:trackByEmpId;">
             <td>{{emp.Id}}</td>
-            <td>{{emp.FirstName}}</td>
-            <td>{{emp.LastName}}</td>
+            <td>{{emp.FirstName|uppercase}}</td>
+            <td>{{emp.LastName|lowercase}}</td>
             <td>{{emp.Dept}}</td>
-            <td>{{i}}</td>
-            <td>{{isFirst}}</td>
-            <td>{{isLast}}</td>
-            <td>{{isEven}}</td>
-            <td>{{isOdd}}</td>
+            <td>{{emp.Salary|currency:'USD':true:'1.2-5'}}</td>
+            <td>{{emp.Dob|date:'longDate'|uppercase}}</td>
+            
         </tr>
         <tr *ngIf="!employees||employees.length==0">
             <td colspan="4">No Employees exist!!</td>
