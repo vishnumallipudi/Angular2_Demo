@@ -9,19 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.pageHeader = "Employee details";
-        this.subHeader = null;
-        this.firstName = "Vishnu";
-        this.lastName = "Mallipudi";
-        this.isDisabled = false;
+        this.userText = "vishnu";
     }
-    AppComponent.prototype.getFullName = function () {
-        return this.firstName + ' ' + this.lastName;
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<div>\n                    \n                    <list-employee>employee dey=tials omes hreer</list-employee>\n                </div>"
+            template: "<div>\n                    enter text here: <input type='text' [(ngModel)]='userText'>\n                   <br/> \n                   <br/> <list-employee>employee dey=tials omes hreer</list-employee>\n                </div>"
         })
     ], AppComponent);
     return AppComponent;

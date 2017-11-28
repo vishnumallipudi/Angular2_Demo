@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("Okay!!!");
+            var options = {
+                url: "http://localhost:56646/api/employees/"
+            };
+            var res1, res2;
+            var data1, data2;
+            $("#btn1").on("click", function () {
+                console.log("you clicked 1");
+                
+                 res1 = $.ajax(options);
+            });
+
+            $("#btn2").on("click", function () {
+                console.log("you clicked 2");
+                res1.done(function (data) {
+                    res2 = $.ajax(options);
+                    data1 = data;
+                });
+                
+            });
+            $("#btn3").on("click", function () {
+                console.log("you clicked 3");
+                res2.done(function (data) {
+                    data2 = data;
+                    $.ajax(options).done(function (data3) {
+                        console.log("data1: " + data1);
+                        console.log("data2: " + data2);
+                        console.log("data3: " + data3);
+                    });
+                });
+                
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    Hello ra 
+    <div>
+        <button id="btn1">Go one</button>
+        <button id="btn2">Go two</button>
+        <button id="btn3">Go three</button>
+
+    </div>
+    <div id="goone"></div>
+    <div id="gotwo"></div>
+    <div id="gothree"></div>
+</body>
+</html>

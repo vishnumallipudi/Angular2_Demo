@@ -12,13 +12,17 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var employee_component_1 = require("./employee/employee.component");
 var employee_list_component_1 = require("./employee/employee-list.component");
+var employeeTitle_pipe_1 = require("./employee/employeeTitle.pipe");
+var empCount_component_1 = require("./employee/empCount.component");
+//import { simpleComponent } from './others/simplemodel'
+var http_1 = require("@angular/http");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, employee_component_1.EmployeeComponent, employee_list_component_1.EmployeeListComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
+            declarations: [app_component_1.AppComponent, employee_component_1.EmployeeComponent, employee_list_component_1.EmployeeListComponent, employeeTitle_pipe_1.EmployeeTitlePipe, empCount_component_1.empCountComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
