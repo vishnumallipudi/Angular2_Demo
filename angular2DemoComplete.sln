@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAPIService2", "Empl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAPI", "JqueryAPI\JqueryAPI.csproj", "{FF4D647E-1FE4-4587-BEDE-0926C194B633}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "candelete", "candelete\candelete.csproj", "{81F6337A-E844-463D-8077-A74731A77B21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF4D647E-1FE4-4587-BEDE-0926C194B633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF4D647E-1FE4-4587-BEDE-0926C194B633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF4D647E-1FE4-4587-BEDE-0926C194B633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F6337A-E844-463D-8077-A74731A77B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F6337A-E844-463D-8077-A74731A77B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F6337A-E844-463D-8077-A74731A77B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F6337A-E844-463D-8077-A74731A77B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

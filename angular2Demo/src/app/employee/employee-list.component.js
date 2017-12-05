@@ -10,25 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var core_2 = require("@angular/core");
+require("rxjs/add/operator/map");
+var employee_service_1 = require("./employee.service");
 var EmployeeListComponent = /** @class */ (function () {
-    function EmployeeListComponent() {
+    function EmployeeListComponent(_employeeService) {
+        this._employeeService = _employeeService;
         // This property keeps track of which radio button is selected
         // We have set the default value to All, so all the employees
         // are displayed in the table by default
         this.selectedEmpCountRadiobtn = 'All';
-        this.employees = [
-            { Id: 1, FirstName: 'vishnu', LastName: 'Mallipudi', Gender: 'male', Dept: 'IT', Salary: '555.3', Dob: new Date('6/15/1994') },
-            { Id: 2, FirstName: 'Venkatesh', LastName: 'Sadineni', Gender: 'male', Dept: 'IT', Salary: '555.3', Dob: new Date('6/15/1994') },
-            { Id: 3, FirstName: 'Saibaba', LastName: 'Vinnakota', Gender: 'female', Dept: 'IT', Salary: '895.3333', Dob: new Date('6/15/1994') },
-            { Id: 4, FirstName: 'Naveen', LastName: 'Tanakala', Gender: 'male', Dept: 'IT', Salary: '143', Dob: new Date('6/15/1994') },
-            { Id: 5, FirstName: 'Naveen2', LastName: 'Tanakala', Gender: 'male', Dept: 'IT', Salary: '948.36', Dob: new Date('6/15/1994') },
-        ];
     }
+    EmployeeListComponent.prototype.ngOnInit = function () {
+        this.employees = this._employeeService.getEmployees();
+    };
     EmployeeListComponent.prototype.getTotalMaleEmployees = function () {
-        return this.employees.filter(function (e) { return e.Gender === "male"; }).length;
+        return this.employees.filter(function (e) { return e.Gender === "Male"; }).length;
     };
     EmployeeListComponent.prototype.getTotalFemaleEmployees = function () {
-        return this.employees.filter(function (e) { return e.Gender === "female"; }).length;
+        return this.employees.filter(function (e) { return e.Gender === "Female"; }).length;
     };
     EmployeeListComponent.prototype.getTotalEmployees = function () {
         return this.employees.length;
@@ -45,9 +45,11 @@ var EmployeeListComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'list-employee',
             templateUrl: 'app/employee/employee-list.component.html',
-            styleUrls: ['app/employee/employee-list.component.css']
+            styleUrls: ['app/employee/employee-list.component.css'],
+            providers: [employee_service_1.EmployeeService]
         }),
-        __metadata("design:paramtypes", [])
+        core_2.Injectable(),
+        __metadata("design:paramtypes", [employee_service_1.EmployeeService])
     ], EmployeeListComponent);
     return EmployeeListComponent;
 }());

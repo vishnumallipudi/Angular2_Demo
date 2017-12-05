@@ -16,6 +16,7 @@ var employeeTitle_pipe_1 = require("./employee/employeeTitle.pipe");
 var empCount_component_1 = require("./employee/empCount.component");
 //import { simpleComponent } from './others/simplemodel'
 var http_1 = require("@angular/http");
+//import { EmployeeService } from './employee/employee.service';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

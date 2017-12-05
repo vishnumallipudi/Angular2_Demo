@@ -8,6 +8,7 @@ import { EmployeeTitlePipe } from './employee/employeeTitle.pipe';
 import { empCountComponent } from './employee/empCount.component';
 //import { simpleComponent } from './others/simplemodel'
 import { HttpModule } from '@angular/http';
+//import { EmployeeService } from './employee/employee.service';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule],

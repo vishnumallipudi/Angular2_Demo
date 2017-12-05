@@ -3,12 +3,41 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=500px, initial-scale=1.0, user-scalable=no">
+
+
+
+
+
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+        window.jQuery || document.write('<script src="jquery-3.2.1.js"><\/script>');
+    </script>
+
+
+    <script>
+
+
         $(document).ready(function () {
-            console.log("Okay!!!");
+            console.log("I dom ready execute second!!!");
+
+            var pobject1 = function () {
+                setTimeout(function () {
+                    console.log("now calling 1...");
+                    return $.ajax({ url: "http://jsonplaceholder.typicode.com/users/1" });
+                },20000);
+            }
+            
+            var pobject2 = function () {
+                setTimeout(function () {
+                    console.log("now calling 2...");
+                    return $.ajax({ url: "http://jsonplaceholder.typicode.com/users" });
+                }, 3000);
+                
+            }
             var options = {
                 url: "http://localhost:56646/api/employees/"
             };
@@ -16,7 +45,7 @@
             var data1, data2;
             $("#btn1").on("click", function () {
                 console.log("you clicked 1");
-                
+
                  res1 = $.ajax(options);
             });
 
@@ -26,7 +55,7 @@
                     res2 = $.ajax(options);
                     data1 = data;
                 });
-                
+
             });
             $("#btn3").on("click", function () {
                 console.log("you clicked 3");
@@ -38,19 +67,41 @@
                         console.log("data3: " + data3);
                     });
                 });
-                
+
             });
+
+           
+
+            $("#btn4").on("click", function () {
+                    $.when(pobject1()).done(function (data1) { 
+                        console.log("This is data1:"+data1);
+                        console.log("when Now calling 2");
+                        pobject2();
+                    });
+            });
+
         });
 
+        
+       
     </script>
+    <style>
+        @media only screen and (max-width: 500px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+    </style>
 
 </head>
 <body>
-    Hello ra 
-    <div>
+    Hello ra
+    <input type="text" value="vishnu" id="mytext" />
+    <div id="mydiv">
         <button id="btn1">Go one</button>
         <button id="btn2">Go two</button>
         <button id="btn3">Go three</button>
+        <button id="btn4">Go four</button>
 
     </div>
     <div id="goone"></div>

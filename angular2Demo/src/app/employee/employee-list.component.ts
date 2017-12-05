@@ -1,33 +1,38 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { IEmployee } from '../employee/employee';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import { EmployeeService } from './employee.service';
 @Component({
     selector: 'list-employee',
     templateUrl: 'app/employee/employee-list.component.html',
-    styleUrls: ['app/employee/employee-list.component.css']
+    styleUrls: ['app/employee/employee-list.component.css'],
+    providers: [EmployeeService]
 })
-export class EmployeeListComponent {
+@Injectable()
+export class EmployeeListComponent implements OnInit {
     employees: IEmployee[];
 
        // This property keeps track of which radio button is selected
     // We have set the default value to All, so all the employees
     // are displayed in the table by default
     selectedEmpCountRadiobtn: string = 'All';
-    constructor() {
-        this.employees = [
-            { Id: 1, FirstName: 'vishnu', LastName: 'Mallipudi', Gender: 'male', Dept: 'IT', Salary: '555.3', Dob: new Date( '6/15/1994' )},
-            { Id: 2, FirstName: 'Venkatesh', LastName: 'Sadineni', Gender: 'male', Dept: 'IT', Salary: '555.3', Dob: new Date('6/15/1994') },
-            { Id: 3, FirstName: 'Saibaba', LastName: 'Vinnakota', Gender: 'female', Dept: 'IT', Salary: '895.3333', Dob: new Date('6/15/1994' )},
-            { Id: 4, FirstName: 'Naveen', LastName: 'Tanakala', Gender: 'male', Dept: 'IT', Salary: '143', Dob: new Date( '6/15/1994' )},
-            { Id: 5, FirstName: 'Naveen2', LastName: 'Tanakala', Gender: 'male', Dept: 'IT', Salary: '948.36', Dob: new Date('6/15/1994') },
-        ];
+    constructor(private _employeeService: EmployeeService) {
+        
     }
 
+    ngOnInit() {
+
+        this.employees = this._employeeService.getEmployees();
+    }
 
     getTotalMaleEmployees(): number {
-        return this.employees.filter(e => e.Gender === "male").length;
+        return this.employees.filter(e => e.Gender === "Male").length;
     }
     getTotalFemaleEmployees(): number {
-        return this.employees.filter(e => e.Gender === "female").length;
+        return this.employees.filter(e => e.Gender === "Female").length;
     }
     getTotalEmployees(): number {
         return this.employees.length;
