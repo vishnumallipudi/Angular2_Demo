@@ -22,13 +22,15 @@ var EmployeeListComponent = /** @class */ (function () {
         this.selectedEmpCountRadiobtn = 'All';
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
-        this.employees = this._employeeService.getEmployees();
+        var _this = this;
+        this._employeeService.getEmployees()
+            .subscribe(function (empData) { return _this.employees = empData; });
     };
     EmployeeListComponent.prototype.getTotalMaleEmployees = function () {
-        return this.employees.filter(function (e) { return e.Gender === "Male"; }).length;
+        return this.employees.filter(function (e) { return e.gender === "Male"; }).length;
     };
     EmployeeListComponent.prototype.getTotalFemaleEmployees = function () {
-        return this.employees.filter(function (e) { return e.Gender === "Female"; }).length;
+        return this.employees.filter(function (e) { return e.gender === "Female"; }).length;
     };
     EmployeeListComponent.prototype.getTotalEmployees = function () {
         return this.employees.length;

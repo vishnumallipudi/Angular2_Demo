@@ -25,14 +25,15 @@ export class EmployeeListComponent implements OnInit {
 
     ngOnInit() {
 
-        this.employees = this._employeeService.getEmployees();
+        this._employeeService.getEmployees()
+            .subscribe(empData => this.employees = empData);
     }
 
     getTotalMaleEmployees(): number {
-        return this.employees.filter(e => e.Gender === "Male").length;
+        return this.employees.filter(e => e.gender === "Male").length;
     }
     getTotalFemaleEmployees(): number {
-        return this.employees.filter(e => e.Gender === "Female").length;
+        return this.employees.filter(e => e.gender === "Female").length;
     }
     getTotalEmployees(): number {
         return this.employees.length;

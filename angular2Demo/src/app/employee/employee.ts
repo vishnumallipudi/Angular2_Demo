@@ -1,16 +1,14 @@
 ﻿export interface IEmployee {
-    Id: number;
-    FirstName: string;
-    LastName: string;
-    Gender: string;
-    Dept: string;
-    Salary: string;
-    Dob: string;
+    code: number;
+    name: string;
+    gender: string;
+    annualSalary: string;
+    dateOfBirth: string;
 }
 
 export class Employee implements IEmployee {
-    constructor(public Id: number, public FirstName: string, public LastName: string, public Gender: string,
-        public Dept: string, public Salary: string, public Dob: string) { }
+    constructor(public code: number, public name: string, public gender: string,
+         public annualSalary: string, public dateOfBirth: string) { }
 
 
 

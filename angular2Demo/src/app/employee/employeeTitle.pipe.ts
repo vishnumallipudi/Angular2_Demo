@@ -7,7 +7,7 @@ export class EmployeeTitlePipe implements PipeTransform {
         if (gender.toLowerCase() == "male")
             return "Mr." + value;
         else
-            console.log(value + " Gender: " + gender);
+            //console.log(value + " Gender: " + gender);
             return "Miss." + value;
     }
 

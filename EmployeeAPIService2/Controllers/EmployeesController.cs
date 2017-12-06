@@ -12,7 +12,7 @@ namespace EmployeeAPIService2.Controllers
         {
             using (jqueryDemoDbEntities e =new jqueryDemoDbEntities())
             {
-                System.Threading.Thread.Sleep(10000);
+                
                 return e.Employees.ToList();
             }
         }

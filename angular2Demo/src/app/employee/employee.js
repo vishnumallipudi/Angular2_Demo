@@ -1,14 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Employee = /** @class */ (function () {
-    function Employee(Id, FirstName, LastName, Gender, Dept, Salary, Dob) {
-        this.Id = Id;
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.Gender = Gender;
-        this.Dept = Dept;
-        this.Salary = Salary;
-        this.Dob = Dob;
+    function Employee(code, name, gender, annualSalary, dateOfBirth) {
+        this.code = code;
+        this.name = name;
+        this.gender = gender;
+        this.annualSalary = annualSalary;
+        this.dateOfBirth = dateOfBirth;
     }
     return Employee;
 }());

@@ -1,4 +1,4 @@
-﻿<emp-count [all]="getTotalEmployees()" [male]="getTotalMaleEmployees()" [female]="getTotalFemaleEmployees()" (countRadiobtnSelectionChanged)="onEmpCountRadiobtnChange($event)"></emp-count>
+﻿<emp-count *ngIf="employees" [all]="getTotalEmployees()" [male]="getTotalMaleEmployees()" [female]="getTotalFemaleEmployees()" (countRadiobtnSelectionChanged)="onEmpCountRadiobtnChange($event)"></emp-count>
 
 <br /><br />
 
@@ -7,8 +7,8 @@
         <tr>
             <td>Emp Id</td>
             <td>Emp FirstName</td>
-            <td>Emp LastName</td>
-            <td>Emp Dept</td>
+            <td>Emp Gender</td>
+            
             <td>Salary</td>
             <td>Date of Birth</td>
             
@@ -16,18 +16,23 @@
     </thead>
     <tbody>
         <ng-container *ngFor="let emp of employees;">
-            <tr *ngIf="selectedEmpCountRadiobtn=='All'||selectedEmpCountRadiobtn==emp.Gender">
-                <td>{{emp.Id}}</td>
-                <td>{{emp.FirstName|empTitlePipe:emp.Gender}}</td>
-                <td>{{emp.LastName|lowercase}}</td>
-                <td>{{emp.Dept}}</td>
-                <td>{{emp.Salary|currency:'USD':true:'1.2-5'}}</td>
-                <td>{{emp.Dob|date:'longDate'|uppercase}}</td>
+            <tr *ngIf="selectedEmpCountRadiobtn=='All'||selectedEmpCountRadiobtn==emp.gender">
+                <td>{{emp.code}}</td>
+                <td>{{emp.name|empTitlePipe:emp.gender}}</td>
+                <td>{{emp.gender}}</td>
+                
+                <td>{{emp.annualSalary|currency:'USD':true:'1.2-5'}}</td>
+                <td>{{emp.dateOfBirth}}</td>
             </tr>
         </ng-container>
-        <tr *ngIf="!employees||employees.length==0">
-            <td colspan="4">No Employees exist!!</td>
+        <tr *ngIf="!employees">
+            <td colspan="5">Loading Please wait</td>
         </tr>
+        <ng-container *ngIf="employees">
+            <tr *ngIf="employees.length==0">
+                <td colspan="5">No Employees records to display</td>
+            </tr>
+        </ng-container>
     </tbody>
 </table>
 <ng-template #elseBlock>You have hided</ng-template>

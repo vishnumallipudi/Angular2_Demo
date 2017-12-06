@@ -14,8 +14,8 @@ var EmployeeTitlePipe = /** @class */ (function () {
         if (gender.toLowerCase() == "male")
             return "Mr." + value;
         else
-            console.log(value + " Gender: " + gender);
-        return "Miss." + value;
+            //console.log(value + " Gender: " + gender);
+            return "Miss." + value;
     };
     EmployeeTitlePipe = __decorate([
         core_1.Pipe({ name: 'empTitlePipe' })
