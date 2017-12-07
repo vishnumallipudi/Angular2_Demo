@@ -19,6 +19,9 @@ export class EmployeeListComponent implements OnInit {
     // We have set the default value to All, so all the employees
     // are displayed in the table by default
     selectedEmpCountRadiobtn: string = 'All';
+
+    //var for error status
+    statusMessage: string="Loading data Please Wait";
     constructor(private _employeeService: EmployeeService) {
         
     }
@@ -26,7 +29,11 @@ export class EmployeeListComponent implements OnInit {
     ngOnInit() {
 
         this._employeeService.getEmployees()
-            .subscribe(empData => this.employees = empData);
+            .subscribe((empData) => this.employees = empData,
+            (error) => {
+                this.statusMessage = "Problem with the service,please try again";
+                console.error(error);
+            });
     }
 
     getTotalMaleEmployees(): number {

@@ -20,11 +20,16 @@ var EmployeeListComponent = /** @class */ (function () {
         // We have set the default value to All, so all the employees
         // are displayed in the table by default
         this.selectedEmpCountRadiobtn = 'All';
+        //var for error status
+        this.statusMessage = "Loading data Please Wait";
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._employeeService.getEmployees()
-            .subscribe(function (empData) { return _this.employees = empData; });
+            .subscribe(function (empData) { return _this.employees = empData; }, function (error) {
+            _this.statusMessage = "Problem with the service,please try again";
+            console.error(error);
+        });
     };
     EmployeeListComponent.prototype.getTotalMaleEmployees = function () {
         return this.employees.filter(function (e) { return e.gender === "Male"; }).length;
